@@ -15,7 +15,7 @@ app.include_router(contact_router)
 # Update CORS settings
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Must be explicit for credentials
+    allow_origins=["https://kks.up.railway.app"],  # Must be explicit for credentials
     allow_credentials=True,  # Allow cookies
     allow_methods=["*"],
     allow_headers=["*"],
