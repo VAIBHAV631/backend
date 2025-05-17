@@ -13,13 +13,13 @@ app.include_router(volunteers_router)
 app.include_router(contact_router)
 
 # Update CORS settings
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=["http://localhost:3000"],  # Must be explicit for credentials
-#     allow_credentials=True,  # Allow cookies
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # Must be explicit for credentials
+    allow_credentials=True,  # Allow cookies
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/", include_in_schema=False)
 def index():
