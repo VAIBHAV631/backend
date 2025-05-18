@@ -53,8 +53,10 @@ def login(response: Response, username: str = Form(...), password: str = Form(..
     key="token",
     value=token,
     httponly=True,
-    samesite="Lax",
-    path="/"
+    samesite="None",  # Must be "None" for cross-site
+    secure=True,      # Required for SameSite=None
+    path="/",
+    domain=".up.railway.app"  # Important: common domain for both frontend and backend
     )
 
     return {"message": "Login successful"}
